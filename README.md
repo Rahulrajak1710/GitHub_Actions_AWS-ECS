@@ -1,4 +1,4 @@
-# Image pushed in Amazon Elastic Container Registry
+# Image  in Elastic Container Registry
 ![Screenshot (159)](https://github.com/user-attachments/assets/b68e8e7a-bf0d-4800-a27a-2d1c5da65a0e) 
 <br>
 # cluster and service
@@ -12,3 +12,7 @@
 # GitHub Actions
 
 ![Screenshot (155)](https://github.com/user-attachments/assets/0bbaec0b-b3fd-4bf2-80f2-f21af3365959)
+
+# Clone the Repository:
+`git clone https://github.com/yourusername/your-repository.git
+cd your-repository`
