@@ -14,5 +14,13 @@
 ![Screenshot (155)](https://github.com/user-attachments/assets/0bbaec0b-b3fd-4bf2-80f2-f21af3365959)
 
 # Clone the Repository:
-`git clone https://github.com/yourusername/your-repository.git
-cd your-repository`
+`git clone https://github.com/yourusername/your-repository.git`
+`cd your-repository`
+# Install Dependencies:
+`npm install`
+#Configure Secrets:
+- Go to your GitHub repository settings.
+Under "Secrets and variables," add any necessary secrets (e.g., AWS credentials).
+- Prepare GitHub Actions Workflow:
+
+Ensure .github/workflows/your-workflow.yml is configured correctly for your build and deployment processes.
