@@ -33,7 +33,7 @@ on:
 env:
   AWS_REGION: us-east-2             
   ECR_REPOSITORY: nginx           
-  ECS_SERVICE: nginx-app-service                 
+  ECS_SERVICE: nginx-app-service-101                
   ECS_CLUSTER: nginx-app-cluster-101                 
   ECS_TASK_DEFINITION: nginx-app-task-definition.json 
                                                
