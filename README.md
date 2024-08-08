@@ -34,3 +34,14 @@ Ensure `.github/workflows/aws-ecr-ecs.yml` is configured correctly for your buil
 # Monitor the Pipeline:
 
 - Go to the `Actions` tab in your GitHub repository to see the pipeline’s progress.
+
+# Testing
+# Check Pipeline Status:
+
+- Verify successful execution of jobs and steps in the "Actions" tab.
+# Review Logs:
+
+- Click on individual jobs and steps to view detailed logs and ensure there are no errors.
+# Run Locally:
+
+- Optionally, test the pipeline locally using GitHub Actions runner or similar tools.
