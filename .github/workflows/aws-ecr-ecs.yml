@@ -34,7 +34,7 @@ env:
   AWS_REGION: us-east-2             
   ECR_REPOSITORY: nginx           
   ECS_SERVICE: nginx-app-service               
-  ECS_CLUSTER: nginx-app-cluster                 
+  ECS_CLUSTER: nginx-app-cluster-101                 
   ECS_TASK_DEFINITION: nginx-app-task-definition.json 
                                                
   CONTAINER_NAME: nginx           
@@ -75,8 +75,7 @@ jobs:
         # be deployed to ECS.
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
+        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
@@ -93,7 +92,6 @@ jobs:
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true
         
-    
     - name: Integration Tests
       run: |
         curl -f http://ngnixloadbalancer-518928766.us-east-2.elb.amazonaws.com/health || exit 1
