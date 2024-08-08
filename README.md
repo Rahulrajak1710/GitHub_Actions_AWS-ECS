@@ -21,8 +21,8 @@
 
 # Configure Secrets: <br>
 - Go to your GitHub repository settings.
-Under "Secrets and variables," add any necessary secrets (e.g., AWS credentials).
+Under `Secrets and variables`," add any necessary secrets (e.g., AWS credentials).
 
 # Prepare GitHub Actions Workflow: <br>
 
-Ensure .github/workflows/your-workflow.yml is configured correctly for your build and deployment processes.
+Ensure `.github/workflows/aws-ecr-ecs.yml` is configured correctly for your build and deployment processes.
