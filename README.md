@@ -18,9 +18,9 @@
 `cd your-repository`
 # Install Dependencies:
 `npm install`
-#Configure Secrets:
+# Configure Secrets:
 - Go to your GitHub repository settings.
 Under "Secrets and variables," add any necessary secrets (e.g., AWS credentials).
-- Prepare GitHub Actions Workflow:
+# Prepare GitHub Actions Workflow:
 
 Ensure .github/workflows/your-workflow.yml is configured correctly for your build and deployment processes.
