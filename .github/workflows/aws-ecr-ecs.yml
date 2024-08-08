@@ -92,3 +92,12 @@ jobs:
         service: ${{ env.ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true
+        
+    - name: Integration Tests
+      run: |
+        curl -f http://my-ecs-service-url/health || exit 1
+    - name: Rollback on Failure
+      if: failure()
+      run: |
+        echo "Integration tests failed. Rolling back to the previous task definition."
+        aws ecs update-service --cluster ${{ env.ECS_CLUSTER }} --service ${{ env.ECS_SERVICE }} --task-definition ${{ secrets.PREVIOUS_TASK_DEFINITION }}
