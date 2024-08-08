@@ -93,9 +93,16 @@ jobs:
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true
         
+        
+    - name: Get ECS Service URL
+      id: get-url
+      run: |
+       ECS_SERVICE_URL=$(aws elbv2 describe-load-balancers --names your-load-balancer-name --region ${{ env.AWS_REGION }} --query 'LoadBalancers[0].DNSName' --output text)
+       echo "service-url=http://$ECS_SERVICE_URL" >> $GITHUB_ENV
     - name: Integration Tests
       run: |
-       curl -f ${{ steps.get-url.outputs.service-url }}/health || exit 1
+       curl -f ${{ env.service-url }}/health || exit 1
+
 
     - name: Rollback on Failure
       if: failure()
