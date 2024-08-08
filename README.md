@@ -1,10 +1,11 @@
 # Image pushed in Amazon Elastic Container Registry
 ![Screenshot (159)](https://github.com/user-attachments/assets/b68e8e7a-bf0d-4800-a27a-2d1c5da65a0e) 
 <br>
-
+# cluster and service
 
 ![Screenshot (153)](https://github.com/user-attachments/assets/9ea7e770-217b-48a4-b740-00a26f0e322d)
 
+# Task definition
 
 ![Screenshot (160)](https://github.com/user-attachments/assets/b11ad43c-f764-437d-a016-48cace3772ad)
 
