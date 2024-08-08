@@ -42,6 +42,6 @@ Ensure `.github/workflows/aws-ecr-ecs.yml` is configured correctly for your buil
 ## Review Logs:
 
 - Click on individual jobs and steps to view detailed logs and ensure there are no errors.
-### Run Locally:
+##### Run Locally:
 
 - Optionally, test the pipeline locally using GitHub Actions runner or similar tools.
