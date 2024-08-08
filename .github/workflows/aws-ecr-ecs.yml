@@ -38,7 +38,7 @@ env:
   ECS_TASK_DEFINITION: nginx-app-task-definition.json 
                                                
   CONTAINER_NAME: nginx           
-  PUBLIC_IP: 18.221.24.0                                          
+                                        
 
 permissions:
   contents: read
@@ -96,7 +96,7 @@ jobs:
     
     - name: Integration Tests
       run: |
-        curl -f http://$PUBLIC_IP:80 || exit 1
+        curl -f http://ngnixloadbalancer-1396713833.us-east-2.elb.amazonaws.com/health || exit 1
 
 
     - name: Rollback on Failure
