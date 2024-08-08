@@ -30,7 +30,7 @@ Ensure `.github/workflows/aws-ecr-ecs.yml` is configured correctly for your buil
 # Usage
 # Trigger the Pipeline:
 
-- Push changes to the main branch or create a pull request to trigger the GitHub Actions workflow.
+- Push changes to the main branch or create a pull request to trigger the `GitHub Actions` workflow.
 # Monitor the Pipeline:
 
-- Go to the "Actions" tab in your GitHub repository to see the pipeline’s progress.
+- Go to the `Actions` tab in your GitHub repository to see the pipeline’s progress.
