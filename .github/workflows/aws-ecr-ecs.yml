@@ -96,8 +96,8 @@ jobs:
     - name: Get ECS Service Load Balancer URL
       id: get-lb-url
       run: |
-        LB_ARN=$(aws ecs nginx-loadbalancers --cluster ${{ env.ECS_CLUSTER }} --services ${{ env.ECS_SERVICE }} --query "services[0].loadBalancers[0].loadBalancerName" --output text)
-        LB_DNS_NAME=$(aws elbv2 describe-load-balancers --names $LB_ARN --query "LoadBalancers[0].DNSName" --output text)
+        LB_ARN=$(aws ecs nginx-loadbalancers --cluster ${{ env.ECS_CLUSTER }} --services ${{ env.ECS_SERVICE }} --query "services[0].loadBalancers[0].nginx-loadbalancers" --output text)
+        LB_DNS_NAME=$(aws elbv2 nginx-loadbalancers --names $LB_ARN --query "LoadBalancers[0].DNSName" --output text)
         echo "LB_URL=http://$LB_DNS_NAME" >> $GITHUB_ENV
     
     - name: Integration Tests
