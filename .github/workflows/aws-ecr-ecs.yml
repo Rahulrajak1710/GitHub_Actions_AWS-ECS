@@ -95,7 +95,8 @@ jobs:
         
     - name: Integration Tests
       run: |
-        curl -f http://my-ecs-service-url/health || exit 1
+       curl -f ${{ steps.get-url.outputs.service-url }}/health || exit 1
+
     - name: Rollback on Failure
       if: failure()
       run: |
