@@ -38,7 +38,7 @@ env:
   ECS_TASK_DEFINITION: nginx-app-task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: nginx           # set this to the name of the container in the
-                                               # containerDefinitions section of your task definition
+  PUBLIC_IP: 18.221.24.0                                           # containerDefinitions section of your task definition
 
 permissions:
   contents: read
@@ -93,14 +93,10 @@ jobs:
     #     cluster: ${{ env.ECS_CLUSTER }}
     #     wait-for-service-stability: true
         
-    - name: Get Public IP
-      run: |
-         PUBLIC_IP=$(aws ecs describe-container-instances --cluster ${{ env.ECS_CLUSTER }} --container-instances ${{ env.ECS_CONTAINER_INSTANCE }} --query "containerInstances[0].attributes[0].value" --output text)
-         echo "PUBLIC_IP=$PUBLIC_IP" >> $GITHUB_ENV
     
     - name: Integration Tests
       run: |
-        curl -f http://$PUBLIC_IP:8080 || exit 1
+        curl -f http://$PUBLIC_IP:80 || exit 1
 
 
     - name: Rollback on Failure
