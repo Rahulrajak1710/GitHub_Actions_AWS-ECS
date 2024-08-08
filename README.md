@@ -13,33 +13,33 @@
 
 ![Screenshot (155)](https://github.com/user-attachments/assets/0bbaec0b-b3fd-4bf2-80f2-f21af3365959)
 # Setup Instructions
-## Clone the Repository:
+##### Clone the Repository:
 `git clone https://github.com/yourusername/your-repository.git`
 `cd your-repository`
-## Install Dependencies:
+##### Install Dependencies:
 `npm install`
 
-## Configure Secrets: <br>
+##### Configure Secrets: <br>
 - Go to your GitHub repository settings.
 Under `Secrets and variables`," add any necessary secrets (e.g., AWS credentials).
 
-## Prepare GitHub Actions Workflow: <br>
+##### Prepare GitHub Actions Workflow: <br>
 
 Ensure `.github/workflows/aws-ecr-ecs.yml` is configured correctly for your build and deployment processes.
 
 # Usage
-## Trigger the Pipeline:
+##### Trigger the Pipeline:
 
 - Push changes to the main branch or create a pull request to trigger the `GitHub Actions` workflow.
-## Monitor the Pipeline:
+##### Monitor the Pipeline:
 
 - Go to the `Actions` tab in your GitHub repository to see the pipeline’s progress.
 
 # Testing
-## Check Pipeline Status:
+##### Check Pipeline Status:
 
 - Verify successful execution of jobs and steps in the "Actions" tab.
-## Review Logs:
+##### Review Logs:
 
 - Click on individual jobs and steps to view detailed logs and ensure there are no errors.
 ##### Run Locally:
